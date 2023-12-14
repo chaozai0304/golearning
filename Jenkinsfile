@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'localhost'
-    }
-
-  }
+  agent any
   stages {
     stage('one') {
       steps {
