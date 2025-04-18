@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炫酷工作台首页</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .header {
+            background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+            color: #01579b;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 1.2em;
+            border-radius: 8px;
+        }
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .system-links {
+            display: flex;
+            justify-content: space-around;
+            background-color: #e1f5fe;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .system-links a {
+            color: #0277bd;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            background: linear-gradient(145deg, #b3e5fc, #81d4fa);
+            border-radius: 8px;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1), -3px -3px 6px rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+        .system-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.3);
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 10px;
+        }
+        .grid-item {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            position: relative;
+        }
+        .grid-item:nth-child(1) { background-color: #e0f7fa; }
+        .grid-item:nth-child(2) { background-color: #fce4ec; }
+        .grid-item:nth-child(3) { background-color: #f3e5f5; }
+        .grid-item:nth-child(4) { background-color: #e8f5e9; }
+        .grid-item:nth-child(5) { background-color: #fff9c4; }
+        .grid-item:nth-child(6) { background-color: #ffecb3; }
+        .grid-item:nth-child(7) { background-color: #d1c4e9; }
+        .grid-item:nth-child(8) { background-color: #c5cae9; }
+        .grid-item:nth-child(9) { background-color: #b2dfdb; }
+        .grid-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .grid-item h3 {
+            margin-top: 0;
+            color: #01579b;
+            font-weight: normal;
+            font-size: 1.1em;
+        }
+        .system-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        .system-link img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+        .system-link a {
+            color: #0288d1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .system-link a:hover {
+            color: #01579b;
+        }
+        .background-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 10%, transparent 70%);
+            z-index: 0;
+            animation: animateBackground 10s linear infinite;
+        }
+        @keyframes animateBackground {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="background-effect"></div>
+
+<div class="container">
+    <div class="header">
+        <h1>炫酷工作台首页</h1>
+    </div>
+
+    <div class="carousel">
+        <img src="https://via.placeholder.com/1200x400" alt="轮播图">
+    </div>
+
+    <div class="system-links">
+        <a href="#system1">系统1</a>
+        <a href="#system2">系统2</a>
+        <a href="#system3">系统3</a>
+        <a href="#system4">系统4</a>
+        <a href="#system5">系统5</a>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <h3>分类1</h3>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link1" target="_blank">系统1</a>
+            </div>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link2" target="_blank">系统2</a>
+            </div>
+        </div>
+        <div class="grid-item">
+            <h3>分类2</h3>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link3" target="_blank">系统3</a>
+            </div>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link4" target="_blank">系统4</a>
+            </div>
+        </div>
+        <div class="grid-item">
+            <h3>分类3</h3>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link5" target="_blank">系统5</a>
+            </div>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link6" target="_blank">系统6</a>
+            </div>
+        </div>
+        <div class="grid-item">
+            <h3>分类4</h3>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link7" target="_blank">系统7</a>
+            </div>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link8" target="_blank">系统8</a>
+            </div>
+        </div>
+        <div class="grid-item">
+            <h3>分类5</h3>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link9" target="_blank">系统9</a>
+            </div>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link10" target="_blank">系统10</a>
+            </div>
+        </div>
+        <div class="grid-item">
+            <h3>分类6</h3>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link11" target="_blank">系统11</a>
+            </div>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link12" target="_blank">系统12</a>
+            </div>
+        </div>
+        <div class="grid-item">
+            <h3>分类7</h3>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link13" target="_blank">系统13</a>
+            </div>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link14" target="_blank">系统14</a>
+            </div>
+        </div>
+        <div class="grid-item">
+            <h3>分类8</h3>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link15" target="_blank">系统15</a>
+            </div>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link16" target="_blank">系统16</a>
+            </div>
+        </div>
+        <div class="grid-item">
+            <h3>分类9</h3>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link17" target="_blank">系统17</a>
+            </div>
+            <div class="system-link">
+                <img src="https://via.placeholder.com/24" alt="系统图标">
+                <a href="#link18" target="_blank">系统18</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

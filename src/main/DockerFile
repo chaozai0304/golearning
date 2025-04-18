@@ -1,0 +1,46 @@
+FROM golang AS builder
+
+ENV http_proxy http://172.17.189.80:4128
+ENV https_proxy http://172.17.189.80:4128
+# 设置工作目录
+WORKDIR /app
+
+# 将 go.mod 和 go.sum 文件复制到工作目录
+#COPY go.mod go.sum ./
+
+# 下载依赖
+#RUN go mod download
+
+# 将源代码复制到工作目录
+COPY src/main/testOne.go ./
+ENV GOOS=linux
+ENV GOARCH=amd64
+# 编译 Go 应用
+RUN go build -o testOne testOne.go
+
+# 使用轻量级的镜像来运行应用
+FROM alpine:latest
+
+ENV http_proxy http://172.17.189.80:4128
+ENV https_proxy http://172.17.189.80:4128
+# 在构建阶段添加环境变量
+
+ENV GOOS=linux
+ENV GOARCH=amd64
+RUN apk add --no-cache libc6-compat
+
+# 设置工作目录
+WORKDIR /root/
+
+# 从构建阶段复制编译好的二进制文件
+COPY --from=builder /app/testOne .
+
+# 确保二进制文件具有执行权限
+RUN chmod +x testOne
+
+
+# 暴露应用的端口（假设你的应用监听在8080端口）
+EXPOSE 8080
+
+# 运行编译好的二进制文件
+CMD ["./testOne"]
